@@ -1,5 +1,5 @@
 #include <iostream>
-#inlcude <cstring>
+#include <cstring>
 
 int main(void) {
   return 0;
