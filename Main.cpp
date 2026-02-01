@@ -1,39 +1,37 @@
 #include <iostream>
 #include <cstring>
 
-uint8_t Board1[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board2[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board3[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board4[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board5[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board6[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board7[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board8[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t Board9[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-uint8_t BoardBuffer[9] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+char Board1[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board2[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board3[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board4[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board5[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board6[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board7[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board8[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char Board9[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char MainBoard[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char BoardBuffer[9] = {'0', '0', '0', '0', '0', '0', '0', '0', '0'};
 
-uint8_t Player1Mark = 11;
-uint8_t Player2Mark = 22;
+char Mark[2] = {'X', 'O'};
 
-uint8_t CheckCurrentPlayer = 0;
+uint8_t CurrentPlayer = 0;
 
 uint8_t TotalTurnsPlayed = 0;
 uint8_t MaximumPlayableTurns = 81;
 
-void CurrentBoard(uint8_t Board) {
-  for(uint8_t i = 0; i < 9; i++)
-    BoardBuffer[i] = Board[i];
+uint8_t CheckWinner(void) {
+  return 0;
+}
+
+void InitGame(void) {
   return;
 }
 
-void PrintBoard(void) {
+void PrintGame(void) {
   return;
 }
 
-void MoveValidity(uint8_t Mark) {
-  if(Mark > 10) { TotalTurnsPlayed--; }
-  return;
-}
 void PlayerMove(uint8_t CurrentPlayer) {
 
   return;
@@ -41,9 +39,11 @@ void PlayerMove(uint8_t CurrentPlayer) {
 
 int main(void) {
 
+  InitGame();
+
   for(; TotalTurnsPlayed < MaximumPlayableTurns; TotalTurnsPlayed++) {
-    CheckCurrentPlayer = TotalTurnsPlayed % 2;
-    PlayerMove(CheckCurrentPlayer);
+    CurrentPlayer = TotalTurnsPlayed % 2;
+    PlayerMove(CurrentPlayer);
   }
 
   return 0;
