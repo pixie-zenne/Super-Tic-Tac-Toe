@@ -32,3 +32,7 @@ Inspired by Vsauce's Super Tic Tac Toe video
 --- --- ---
  7 | 8 | 9
 ```
+
+## Rules
+1. The normal tic tac toe rules
+2. Upon winning a game on one of the board, the winning player will mark the main board
