@@ -1,30 +1,93 @@
 #include <iostream>
 #include <cstring>
 
-char Board1[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board2[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board3[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board4[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board5[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board6[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board7[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board8[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char Board9[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+char B[9][9] = { /* B is for Board */
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+};
 char MainBoard[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char BoardBuffer[9] = {'0', '0', '0', '0', '0', '0', '0', '0', '0'};
+char BufferBoard[9] = {'0', '0', '0', '0', '0', '0', '0', '0', '0'};
 
 char Mark[2] = {'X', 'O'};
 
 uint8_t CurrentPlayer = 0;
 
 uint8_t TotalTurnsPlayed = 0;
-uint8_t MaximumPlayableTurns = 81;
+uint8_t TheoreticallyMaximumPlayableTurns = 81;
 
 uint8_t CheckWinner(void) {
   return 0;
 }
 
+/*
+Here is the visual of the board
+
+ 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+
+-----------     -----------     -----------
+
+ 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+
+-----------     -----------     -----------
+
+ 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+
+
+ 1 | 2 | 3    Current Player : Player Number
+--- --- ---   Current Board  : Board Number
+ 4 | 5 | 6
+--- --- ---
+ 7 | 8 | 9
+*/
 void InitGame(void) {
+  std::cout << " " << std::endl;
+  std::cout << "-" << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << "-" << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
+  std::cout << " " << std::endl;
   return;
 }
 
@@ -32,16 +95,11 @@ void PrintGame(void) {
   return;
 }
 
-void PlayerMove(uint8_t CurrentPlayer) {
-
-  return;
-}
-
 int main(void) {
 
   InitGame();
 
-  for(; TotalTurnsPlayed < MaximumPlayableTurns; TotalTurnsPlayed++) {
+  for(; TotalTurnsPlayed < TheoreticallyMaximumPlayableTurns; TotalTurnsPlayed++) {
     CurrentPlayer = TotalTurnsPlayed % 2;
     PlayerMove(CurrentPlayer);
   }
