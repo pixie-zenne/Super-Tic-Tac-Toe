@@ -59,35 +59,37 @@ Here is the visual of the board
  7 | 8 | 9
 */
 void InitGame(void) {
-  std::cout << " " << std::endl;
-  std::cout << "-" << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << "-" << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
-  std::cout << " " << std::endl;
+  using namespace std
+
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+  cout << " " << endl;
+
   return;
 }
 
