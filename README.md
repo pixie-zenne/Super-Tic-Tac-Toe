@@ -1,5 +1,5 @@
 # Super-Tic-Tac-Toe
-Inspired by Vsauce's Super Tic Tac Toe video
+Inspired by Vsauce's Super Tic Tac Toe video.
 
 ## The game
 ```
@@ -34,5 +34,8 @@ Inspired by Vsauce's Super Tic Tac Toe video
 ```
 
 ## Rules
-1. The normal tic tac toe rules
-2. Upon winning a game on one of the board, the winning player will mark the main board
+1. To play the game, there must be two players
+2. The typical Tic-Tac-Toe rules
+
+## Version
+0.0.0 WIP
