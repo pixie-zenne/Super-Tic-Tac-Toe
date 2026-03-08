@@ -1,120 +1,69 @@
-#include <iostream>
+#include <cstdint>
 #include <cstring>
+#include <iostream>
 
-char B[9][9] = { /* B is for Board */
+unsigned char BufferBoard[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+unsigned char MainBoard[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+unsigned char MiniBoard[9][9] = {
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
+
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
   {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
-  {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
+  {'1', '2', '3', '4', '5', '6', '7', '8', '9'},
 };
-char MainBoard[9] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-char BufferBoard[9] = {'0', '0', '0', '0', '0', '0', '0', '0', '0'};
 
-char Mark[2] = {'X', 'O'};
+// The marks for the two players
+unsigned char PlayerOneMark = 'X';
+unsigned char PlayerTwoMark = 'O';
 
-uint8_t CurrentPlayer = 0;
+// GameState
+uint8_t GS_Winner = 0;
+uint8_t GS_CurrentPlayer = 0;
 
-uint8_t TotalTurnsPlayed = 0;
-uint8_t TheoreticallyMaximumPlayableTurns = 81;
-
-uint8_t CheckWinner(void) {
-  return 0;
-}
+uint8_t TurnsPlayed = 0;
+uint8_t MaximumPossiblePlayerbleTurns = 81;
 
 /*
-Here is the visual of the board
-
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
---- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
---- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
-
------------     -----------     -----------
-
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
---- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
---- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
-
------------     -----------     -----------
-
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
---- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
---- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
-
-
- 1 | 2 | 3    Current Player : Player Number
---- --- ---   Current Board  : Board Number
- 4 | 5 | 6
---- --- ---
- 7 | 8 | 9
-*/
-void InitGame(void) {
+void PrintGame(void) {
   using namespace std
 
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
-  cout << " " << endl;
+  cout << "" << endl;
 
   return;
 }
-
-void PrintGame(void) {
-  return;
-}
+*/
 
 /*
-void GameFunction(int Choice) {
+void SelectBoard(uint8_t Choice) {
   switch(Choice) {
     case 1:
-      // Something to do with the board
+      Something to do with the board
   }
+  return;
+};
+
+void CheckMiniBoard(void) {
+  return;
+}
+
+void CheckMainBoard(void) {
+  return;
+}
+
+void MarkBoard(void) {
   return;
 }
 */
 
 int main(void) {
 
-  InitGame();
-
-  for(; TotalTurnsPlayed < TheoreticallyMaximumPlayableTurns; TotalTurnsPlayed++) {
-    CurrentPlayer = TotalTurnsPlayed % 2;
-    PlayerMove(CurrentPlayer);
-  }
+  // Code Here
 
   return 0;
 }
