@@ -97,6 +97,16 @@ void PrintGame(void) {
   return;
 }
 
+/*
+void GameFunction(int Choice) {
+  switch(Choice) {
+    case 1:
+      // Something to do with the board
+  }
+  return;
+}
+*/
+
 int main(void) {
 
   InitGame();
