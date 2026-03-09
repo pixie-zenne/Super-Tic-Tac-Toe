@@ -34,18 +34,25 @@ void PrintGame(void) {
 
   cout << "" << endl;
 
+  // More code here
+
   return;
 }
 
 void SelectBoard(uint8_t Choice) {
   switch(Choice) {
     case 1:
-      Something to do with the board
+      
+  // Code here
+
   }
   return;
 };
 
 void CheckMiniBoard(void) {
+
+  // Code here
+
   return;
 }
 
@@ -86,12 +93,15 @@ void CheckMainBoard(void) {
 }
 
 void MarkBoard(void) {
+  
+  // Code here
+
   return;
 }
 
 int main(void) {
 
-  // Code Here
+  // Code here
 
   return 0;
 }
