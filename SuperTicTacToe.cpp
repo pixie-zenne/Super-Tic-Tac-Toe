@@ -55,44 +55,32 @@ void CheckMainBoard(void) {
     (MainBoard[0] == 'X' && MainBoard[1] == 'X' && MainBoard[2] == 'X') ||
     (MainBoard[3] == 'X' && MainBoard[4] == 'X' && MainBoard[5] == 'X') ||
     (MainBoard[7] == 'X' && MainBoard[7] == 'X' && MainBoard[8] == 'X')
-  ) {
-    GS_Winner = 1;
-  }
+  ) { GS_Winner = 1; }
   else if ( // Check for matching marks in a column
     (MainBoard[0] == 'X' && MainBoard[3] == 'X' && MainBoard[6] == 'X') ||
     (MainBoard[1] == 'X' && MainBoard[4] == 'X' && MainBoard[7] == 'X') ||
     (MainBoard[2] == 'X' && MainBoard[5] == 'X' && MainBoard[8] == 'X')
-  ) {
-    GS_Winner = 1;
-  }
+  ) { GS_Winner = 1; }
   else if ( // Check for matching marks in a diagonal
     (MainBoard[0] == 'X' && MainBoard[4] == 'X' && MainBoard[8] == 'X') ||
     (MainBoard[2] == 'X' && MainBoard[4] == 'X' && MainBoard[6] == 'X')
-  ) {
-    GS_Winner = 1;
-  }
+  ) { GS_Winner = 1; }
 
   // FOR PLAYER TWO
   else if ( // Check for matching marks in a row
     (MainBoard[0] == 'O' && MainBoard[1] == 'O' && MainBoard[2] == 'O') ||
     (MainBoard[3] == 'O' && MainBoard[4] == 'O' && MainBoard[5] == 'O') ||
     (MainBoard[7] == 'O' && MainBoard[7] == 'O' && MainBoard[8] == 'O')
-  ) {
-    GS_Winner = 2;
-  }
+  ) { GS_Winner = 2; }
   else if ( // Check for matching marks in a column
     (MainBoard[0] == 'O' && MainBoard[3] == 'O' && MainBoard[6] == 'O') ||
     (MainBoard[1] == 'O' && MainBoard[4] == 'O' && MainBoard[7] == 'O') ||
     (MainBoard[2] == 'O' && MainBoard[5] == 'O' && MainBoard[8] == 'O')
-  ) {
-    GS_Winner = 2;
-  }
+  ) { GS_Winner = 2; }
   else if ( // Check for matching marks in a diagonal
     (MainBoard[0] == 'O' && MainBoard[4] == 'O' && MainBoard[8] == 'O') ||
     (MainBoard[2] == 'O' && MainBoard[4] == 'O' && MainBoard[6] == 'O')
-  ) {
-    GS_Winner = 2;
-  }
+  ) { GS_Winner = 2; }
 
   return;
 }
