@@ -1,7 +1,7 @@
-# Super-Tic-Tac-Toe
+## Super-Tic-Tac-Toe
 Inspired by Vsauce's Super Tic Tac Toe video.
 
-## The game
+### The game
 ```
  1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
 --- --- ---  |  --- --- ---  |  --- --- ---
@@ -33,9 +33,10 @@ Inspired by Vsauce's Super Tic Tac Toe video.
  7 | 8 | 9
 ```
 
-## Rules
+### Rules
 1. To play the game, there must be two players
 2. The typical Tic-Tac-Toe rules
+3. TO BE ADDED
 
-## Version
+### Version
 0.0.0 WIP
