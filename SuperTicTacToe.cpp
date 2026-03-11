@@ -27,7 +27,42 @@ uint8_t GS_Winner = 0;
 uint8_t GS_CurrentPlayer = 0;
 
 uint8_t TurnsPlayed = 0;
-uint8_t MaximumPossiblePlayerbleTurns = 81;
+uint8_t MaximumPossiblePlayableTurns = 81;
+
+/*
+The game's visual
+
+So that the developer can easily imagine the boards
+*/ /*
+ 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+
+-----------     -----------     -----------
+
+ 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+
+-----------     -----------     -----------
+
+ 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+--- --- ---  |  --- --- ---  |  --- --- ---
+ 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+
+
+ 1 | 2 | 3    Current Player : Player Number
+--- --- ---   Current Board  : Board Number
+ 4 | 5 | 6
+--- --- ---
+ 7 | 8 | 9
+*/
 
 void PrintGame(void) {
   using namespace std
@@ -40,12 +75,13 @@ void PrintGame(void) {
 }
 
 void SelectBoard(uint8_t Choice) {
-  switch(Choice) {
-    case 1:
-      
-  // Code here
+  // To select the board properly
+  // Because players are using 1 to 9
+  // While he program uses 0 to 8
+  Choice--;
 
-  }
+  // More code here
+  // Buffer = MiniBoard[Choice]
   return;
 };
 
