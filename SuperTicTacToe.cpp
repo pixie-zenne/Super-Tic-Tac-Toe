@@ -67,9 +67,42 @@ So that the developer can easily imagine the boards
 void PrintGame(void) {
   using namespace std
 
+  // Preparing the boards
+
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
   cout << "" << endl;
 
-  // More code here
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+
+  cout << "" << endl;
+  cout << "" << endl;
+
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
+  cout << "" << endl;
 
   return;
 }
@@ -128,7 +161,14 @@ void CheckMainBoard(void) {
   return;
 }
 
-void MarkBoard(void) {
+void MarkMiniBoard(void) {
+  
+  // Code here
+
+  return;
+}
+
+void MarkMainBoard(uint8_t Choice) {
   
   // Code here
 
