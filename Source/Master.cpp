@@ -1,3 +1,5 @@
+#define master main
+
 #include <cstdint>
 #include <cstring>
 #include <iostream>
@@ -207,7 +209,7 @@ void MarkMainBoard(uint8_t Choice) {
   return;
 }
 
-int main(void) {
+int master(void) {
 
   // Code here
 
