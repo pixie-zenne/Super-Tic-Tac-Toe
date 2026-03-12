@@ -71,40 +71,40 @@ void PrintGame(void) {
 
   // Preparing the boards
 
+  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3" << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6" << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9" << endl;
+
   cout << "" << endl;
+  cout << "-----------     -----------     -----------" << endl;
   cout << "" << endl;
+
+  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3" << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6" << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9" << endl;
+
   cout << "" << endl;
+  cout << "-----------     -----------     -----------" << endl;
   cout << "" << endl;
-  cout << "" << endl;
+
+  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3" << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6" << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9" << endl;
 
   cout << "" << endl;
   cout << "" << endl;
-  cout << "" << endl;
 
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-
-  cout << "" << endl;
-  cout << "" << endl;
-
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
-  cout << "" << endl;
+  cout << " 1 | 2 | 3    Current Player : Player Number" << endl;
+  cout << "--- --- ---   Current Board  : Board Number" << endl;
+  cout << " 4 | 5 | 6" << endl;
+  cout << "--- --- ---" << endl;
+  cout << " 7 | 8 | 9" << endl;
 
   return;
 }
