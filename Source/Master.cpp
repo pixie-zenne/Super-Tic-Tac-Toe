@@ -65,10 +65,8 @@ So that the developer can easily imagine the boards
 --- --- ---
  7 | 8 | 9
 */
-void FirstBoard(void) {
+void SelectFirstMiniBoard(void) {
   using namespace std
-
-  // Preparing the boards
 
   cout << "   |   |     |     |   |     |     |   |   " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
