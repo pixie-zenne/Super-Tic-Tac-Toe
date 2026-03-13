@@ -65,46 +65,88 @@ So that the developer can easily imagine the boards
 --- --- ---
  7 | 8 | 9
 */
+void FirstBoard(void) {
+  using namespace std
+
+  // Preparing the boards
+
+  cout << "   |   |     |     |   |     |     |   |   " << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << "   | 1 |     |     | 2 |     |     | 3 |   " << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << "   |   |     |     |   |     |     |   |   " << endl;
+
+  cout << "" << endl;
+  cout << "-----------     -----------     -----------" << endl;
+  cout << "" << endl;
+
+  cout << "   |   |     |     |   |     |     |   |   " << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << "   | 3 |     |     | 4 |     |     | 5 |   " << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << "   |   |     |     |   |     |     |   |   " << endl;
+
+  cout << "" << endl;
+  cout << "-----------     -----------     -----------" << endl;
+  cout << "" << endl;
+
+  cout << "   |   |     |     |   |     |     |   |   " << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << "   | 6 |     |     | 7 |     |     | 8 |   " << endl;
+  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+  cout << "   |   |     |     |   |     |     |   |   " << endl;
+
+  cout << "" << endl;
+  cout << "" << endl;
+
+  cout << "   |   |      Current Player : Player Number" << endl;
+  cout << "--- --- ---   Current Board  : Board Number" << endl;
+  cout << "   |   |   " << endl;
+  cout << "--- --- ---" << endl;
+  cout << "   |   |   " << endl;
+
+  return;
+}
 
 void PrintGame(void) {
   using namespace std
 
   // Preparing the boards
 
-  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3" << endl;
+  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3 " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6" << endl;
+  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6 " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9" << endl;
+  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9 " << endl;
 
   cout << "" << endl;
   cout << "-----------     -----------     -----------" << endl;
   cout << "" << endl;
 
-  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3" << endl;
+  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3 " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6" << endl;
+  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6 " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9" << endl;
+  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9 " << endl;
 
   cout << "" << endl;
   cout << "-----------     -----------     -----------" << endl;
   cout << "" << endl;
 
-  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3" << endl;
+  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3 " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6" << endl;
+  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6 " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9" << endl;
+  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9 " << endl;
 
   cout << "" << endl;
   cout << "" << endl;
 
   cout << " 1 | 2 | 3    Current Player : Player Number" << endl;
   cout << "--- --- ---   Current Board  : Board Number" << endl;
-  cout << " 4 | 5 | 6" << endl;
+  cout << " 4 | 5 | 6 " << endl;
   cout << "--- --- ---" << endl;
-  cout << " 7 | 8 | 9" << endl;
+  cout << " 7 | 8 | 9 " << endl;
 
   return;
 }
