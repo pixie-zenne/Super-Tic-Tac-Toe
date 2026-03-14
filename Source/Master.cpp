@@ -317,6 +317,7 @@ void MarkMainBoard(uint8_t Choice) {
 int master(void) {
 
   SelectFirstMiniBoard(void);
+  uint8_t selection = 0;
 
   // More code here
   return 0;
