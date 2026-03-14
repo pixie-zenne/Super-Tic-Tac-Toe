@@ -75,9 +75,9 @@ void SelectFirstMiniBoard(void) {
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
   cout << "   |   |     |     |   |     |     |   |   " << endl;
 
-  cout << "" << endl;
+  cout << endl;
   cout << "-----------     -----------     -----------" << endl;
-  cout << "" << endl;
+  cout <<  endl;
 
   cout << "   |   |     |     |   |     |     |   |   " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
@@ -85,9 +85,9 @@ void SelectFirstMiniBoard(void) {
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
   cout << "   |   |     |     |   |     |     |   |   " << endl;
 
-  cout << "" << endl;
+  cout << endl;
   cout << "-----------     -----------     -----------" << endl;
-  cout << "" << endl;
+  cout << endl;
 
   cout << "   |   |     |     |   |     |     |   |   " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
@@ -95,11 +95,11 @@ void SelectFirstMiniBoard(void) {
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
   cout << "   |   |     |     |   |     |     |   |   " << endl;
 
-  cout << "" << endl;
-  cout << "" << endl;
+  cout << endl;
+  cout << endl;
 
-  cout << "   |   |      Current Player : Player Number" << endl;
-  cout << "--- --- ---   Current Board  : Board Number" << endl;
+  cout << "   |   |      Current Player : Player One" << endl;
+  cout << "--- --- ---   Current Mini Board  : None" << endl;
   cout << "   |   |   " << endl;
   cout << "--- --- ---" << endl;
   cout << "   |   |   " << endl;
@@ -107,45 +107,43 @@ void SelectFirstMiniBoard(void) {
   return;
 }
 
-void PrintGame(void) {
+void PrintTheGame(void) {
   using namespace std
 
-  // Preparing the boards
-
-  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3 " << endl;
+  cout << " " << MiniBoard[0][0] << " | " << MiniBoard[0][1] << " | " << MiniBoard[0][2] << "   |   " << MiniBoard[1][0] << " | " << MiniBoard[1][1] << " | " << MiniBoard[1][2] << "   |   " << MiniBoard[2][0] << " | " << MiniBoard[2][1] << " | " << MiniBoard[2][2] << " " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6 " << endl;
+  cout << " " << MiniBoard[0][3] << " | " << MiniBoard[0][4] << " | " << MiniBoard[0][5] << "   |   " << MiniBoard[1][3] << " | " << MiniBoard[1][4] << " | " << MiniBoard[1][5] << "   |   " << MiniBoard[2][3] << " | " << MiniBoard[2][4] << " | " << MiniBoard[2][5] << " " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9 " << endl;
+  cout << " " << MiniBoard[0][6] << " | " << MiniBoard[0][7] << " | " << MiniBoard[0][8] << "   |   " << MiniBoard[1][6] << " | " << MiniBoard[1][7] << " | " << MiniBoard[1][8] << "   |   " << MiniBoard[2][6] << " | " << MiniBoard[2][7] << " | " << MiniBoard[2][8] << " " << endl;
 
-  cout << "" << endl;
+  cout << endl;
   cout << "-----------     -----------     -----------" << endl;
-  cout << "" << endl;
+  cout << endl;
 
-  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3 " << endl;
+  cout << " " << MiniBoard[3][0] << " | " << MiniBoard[3][1] << " | " << MiniBoard[3][2] << "   |   " << MiniBoard[4][0] << " | " << MiniBoard[4][1] << " | " << MiniBoard[4][2] << "   |   " << MiniBoard[5][0] << " | " << MiniBoard[5][1] << " | " << MiniBoard[5][2] << " " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6 " << endl;
+  cout << " " << MiniBoard[3][3] << " | " << MiniBoard[3][4] << " | " << MiniBoard[3][5] << "   |   " << MiniBoard[4][3] << " | " << MiniBoard[4][4] << " | " << MiniBoard[4][5] << "   |   " << MiniBoard[5][3] << " | " << MiniBoard[5][4] << " | " << MiniBoard[5][5] << " " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9 " << endl;
+  cout << " " << MiniBoard[3][6] << " | " << MiniBoard[3][7] << " | " << MiniBoard[3][8] << "   |   " << MiniBoard[4][6] << " | " << MiniBoard[4][7] << " | " << MiniBoard[4][8] << "   |   " << MiniBoard[5][6] << " | " << MiniBoard[5][7] << " | " << MiniBoard[5][8] << " " << endl;
 
-  cout << "" << endl;
+  cout << endl;
   cout << "-----------     -----------     -----------" << endl;
-  cout << "" << endl;
+  cout << endl;
 
-  cout << " 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3 " << endl;
+  cout << " " << MiniBoard[6][0] << " | " << MiniBoard[6][1] << " | " << MiniBoard[6][2] << "   |   " << MiniBoard[7][0] << " | " << MiniBoard[7][1] << " | " << MiniBoard[7][2] << "   |   " << MiniBoard[8][0] << " | " << MiniBoard[8][1] << " | " << MiniBoard[8][2] << " " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6 " << endl;
+  cout << " " << MiniBoard[6][3] << " | " << MiniBoard[6][4] << " | " << MiniBoard[6][5] << "   |   " << MiniBoard[7][3] << " | " << MiniBoard[7][4] << " | " << MiniBoard[7][5] << "   |   " << MiniBoard[8][3] << " | " << MiniBoard[8][4] << " | " << MiniBoard[8][5] << " " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << " 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9 " << endl;
+  cout << " " << MiniBoard[6][6] << " | " << MiniBoard[6][7] << " | " << MiniBoard[6][8] << "   |   " << MiniBoard[7][6] << " | " << MiniBoard[7][7] << " | " << MiniBoard[7][8] << "   |   " << MiniBoard[8][6] << " | " << MiniBoard[8][7] << " | " << MiniBoard[8][8] << " " << endl;
 
-  cout << "" << endl;
-  cout << "" << endl;
+  cout << endl;
+  cout << endl;
 
-  cout << " 1 | 2 | 3    Current Player : Player Number" << endl;
-  cout << "--- --- ---   Current Board  : Board Number" << endl;
-  cout << " 4 | 5 | 6 " << endl;
+  cout << " " << MainBoard[0] << " | " << MainBoard[1] << " | " << MainBoard[2] << "    Current Player : Player [Insert Number]" << endl;
+  cout << "--- --- ---   Current Mini Board  : [Insert Number]" << endl;
+  cout << " " << MainBoard[3] << " | " << MainBoard[4] << " | " << MainBoard[5] << endl;
   cout << "--- --- ---" << endl;
-  cout << " 7 | 8 | 9 " << endl;
+  cout << " " << MainBoard[6] << " | " << MainBoard[7] << " | " << MainBoard[8] << endl;
 
   return;
 }
