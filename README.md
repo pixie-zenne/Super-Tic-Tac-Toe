@@ -36,7 +36,6 @@ Inspired by Vsauce's Super Tic Tac Toe video.
 ### Rules
 1. To play the game, there must be two players
 2. The typical Tic-Tac-Toe rules
-3. TO BE ADDED
 
 ### Version
 0.0.0 WIP
