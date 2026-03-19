@@ -1,5 +1,6 @@
 #define master main
 
+#include <cstdbool>
 #include <cstdint>
 #include <cstring>
 #include <iostream>
@@ -27,6 +28,7 @@ unsigned char Player_Two_Mark = 'O';
 // GameState
 uint8_t Game_State-Winner = 0;
 uint8_t Game_State-Current_Player = 0;
+bool Game_State-Running = true;
 
 uint8_t Turns_Played = 0;
 uint8_t Maximum_Possible_Playable_Turns = 81;
@@ -208,10 +210,25 @@ void Mark_Main_Board(uint8_t Choice) {
 }
 
 int master(void) {
-
   Select_First_Mini_Board();
   uint8_t selection = 0;
 
-  // More code here
+  while (Game_State-Running == true) {
+    if (Game_State-Winner == 1) {
+      // More code here
+      Game_State-Running = false;
+    }
+    else if (Game_State-Winner == 2) {
+      // More code here
+      Game_State-Running = false;
+    }
+    else if (Turns_Played == Maximum_Possible_Playable_Turns) {
+      // More code here
+      Game_State-Running = false;
+    }
+
+    // More code here
+  }
+
   return 0;
 }
