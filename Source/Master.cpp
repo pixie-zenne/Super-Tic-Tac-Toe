@@ -190,7 +190,6 @@ void Check_Main_Board(void) {
   return;
 }
 
-
 void Select_Mini_Board(void) {
   // To select the board properly
   // Because players are using 1 to 9
@@ -218,15 +217,15 @@ int master(void) {
 
   for (; Turns_Played <= Maximum_Possible_Playable_Turns; Turns_Played++) {
     if (Game_State-Winner == 1) {
-      // More code here
+      std::cout << "Player One Wins!" << std::endl;
       Game_State-Running = false;
     }
     else if (Game_State-Winner == 2) {
-      // More code here
+      std::cout << "Player Two Wins!" << std::endl;
       Game_State-Running = false;
     }
 
-    Game_State-Current_Player = i % 2;
+    Game_State-Current_Player = (i % 2) + 1;
     Mark_Mini_Board();
     Mark_Main_Board();
   }
