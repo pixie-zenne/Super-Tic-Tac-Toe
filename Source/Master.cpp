@@ -28,9 +28,8 @@ unsigned char Player_Two_Mark = 'O';
 // GameState
 uint8_t Game_State-Winner = 0;
 uint8_t Game_State-Current_Player = 0;
-bool Game_State-Running = true;
 
-uint8_t Turns_Played = 0;
+uint8_t Legal_Turns_Played = 0;
 uint8_t Maximum_Possible_Playable_Turns = 81;
 
 /*
@@ -191,18 +190,20 @@ void Check_Main_Board(void) {
 }
 
 void Select_Mini_Board(void) {
-  // To select the board properly
-  // Because players are using 1 to 9
-  // While he program uses 0 to 8
-  Choice--;
+  // To select the next mini board
 
-  // More code here
   // Buffer = MiniBoard[Choice]
   return;
 };
 
 void Mark_Mini_Board(void) {
-  // More code here
+  // Mark board here
+
+  // If the move is invalid decrease by one and stay on the same mini board
+  // Legal_Turns_Played--;
+
+  // else
+  // Select_Mini_Board();
   return;
 }
 
@@ -212,23 +213,20 @@ void Mark_Main_Board(void) {
 }
 
 int master(void) {
-  Select_First_Mini_Board();
-  uint8_t selection = 0;
+  // Select_First_Mini_Board();
 
-  for (; Turns_Played <= Maximum_Possible_Playable_Turns; Turns_Played++) {
-    if (Game_State-Winner == 1) {
-      std::cout << "Player One Wins!" << std::endl;
-      Game_State-Running = false;
-    }
-    else if (Game_State-Winner == 2) {
-      std::cout << "Player Two Wins!" << std::endl;
-      Game_State-Running = false;
-    }
+  for (; Legal_Turns_Played <= Maximum_Possible_Playable_Turns; Legal_Turns_Played++) {
+
+    // Show the winner of the game
+    if (Game_State-Winner == 1)  { std::cout << "Player One Wins!" << std::endl; }
+    else if (Game_State-Winner == 2) { std::cout << "Player Two Wins!" << std::endl; }
 
     Game_State-Current_Player = (i % 2) + 1;
     Mark_Mini_Board();
     Mark_Main_Board();
   }
+
+  std::cout << "Its a draw!" << std::endl;
 
   return 0;
 }
