@@ -150,17 +150,6 @@ void Print_The_Game(void) {
   return;
 }
 
-void Select_Board(uint8_t Choice) {
-  // To select the board properly
-  // Because players are using 1 to 9
-  // While he program uses 0 to 8
-  Choice--;
-
-  // More code here
-  // Buffer = MiniBoard[Choice]
-  return;
-};
-
 void Check_Mini_Board(void) {
   return;
 }
@@ -201,11 +190,25 @@ void Check_Main_Board(void) {
   return;
 }
 
-void Mark_Mini_Board(uint8_t Choice) {
+
+void Select_Mini_Board(void) {
+  // To select the board properly
+  // Because players are using 1 to 9
+  // While he program uses 0 to 8
+  Choice--;
+
+  // More code here
+  // Buffer = MiniBoard[Choice]
+  return;
+};
+
+void Mark_Mini_Board(void) {
+  // More code here
   return;
 }
 
-void Mark_Main_Board(uint8_t Choice) {
+void Mark_Main_Board(void) {
+  // More code here
   return;
 }
 
@@ -213,7 +216,7 @@ int master(void) {
   Select_First_Mini_Board();
   uint8_t selection = 0;
 
-  while (Game_State-Running == true) {
+  for (; Turns_Played <= Maximum_Possible_Playable_Turns; Turns_Played++) {
     if (Game_State-Winner == 1) {
       // More code here
       Game_State-Running = false;
@@ -222,12 +225,10 @@ int master(void) {
       // More code here
       Game_State-Running = false;
     }
-    else if (Turns_Played == Maximum_Possible_Playable_Turns) {
-      // More code here
-      Game_State-Running = false;
-    }
 
-    // More code here
+    Game_State-Current_Player = i % 2;
+    Mark_Mini_Board();
+    Mark_Main_Board();
   }
 
   return 0;
