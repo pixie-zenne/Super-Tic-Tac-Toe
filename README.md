@@ -1,7 +1,7 @@
-## Super-Tic-Tac-Toe
+## Super-Tic-Tac-Toe (0.0.0)
 Inspired by Vsauce's Super Tic Tac Toe video.
 
-### The game
+### The Game
 ```
  1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
 --- --- ---  |  --- --- ---  |  --- --- ---
@@ -26,14 +26,14 @@ Inspired by Vsauce's Super Tic Tac Toe video.
  7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
 
 
- 1 | 2 | 3    Current Player : Player Number
---- --- ---   Current Board  : Board Number
- 4 | 5 | 6
---- --- ---
- 7 | 8 | 9
+ 1 | 2 | 3   :: Current Player : 0
+--- --- ---  :: Current Mini Board  : 0
+ 4 | 5 | 6   :: Move : Legal
+--- --- ---  Select a mini board to mark
+ 7 | 8 | 9   >> ...
 ```
 
-### Rules
+### The Rules
 1. To play the game, there must be two players
 2. The typical Tic-Tac-Toe rules
 
