@@ -115,7 +115,7 @@ void select_first_mini_board(void) {
   return;
 }
 
-void Print_The_Game(void) {
+void print_the_game(void) {
   using namespace std;
 
 	cout << endl;
@@ -158,17 +158,13 @@ void Print_The_Game(void) {
   return;
 }
 
-void Check_mini_board(void) {
-  return;
-}
-
-void Check_main_board(void) {
+void check_main_board(void) {
   if (
 		// For player one
 		// Check for matching marks in a row
     (main_board[0] == 'X' && main_board[1] == 'X' && main_board[2] == 'X') ||
     (main_board[3] == 'X' && main_board[4] == 'X' && main_board[5] == 'X') ||
-    (main_board[7] == 'X' && main_board[7] == 'X' && main_board[8] == 'X') ||
+    (main_board[6] == 'X' && main_board[7] == 'X' && main_board[8] == 'X') ||
 
 		// Check for matching marks in a column
     (main_board[0] == 'X' && main_board[3] == 'X' && main_board[6] == 'X') ||
@@ -187,7 +183,7 @@ void Check_main_board(void) {
 		// Check for matching marks in a row
     (main_board[0] == 'O' && main_board[1] == 'O' && main_board[2] == 'O') ||
     (main_board[3] == 'O' && main_board[4] == 'O' && main_board[5] == 'O') ||
-    (main_board[7] == 'O' && main_board[7] == 'O' && main_board[8] == 'O') ||
+		(main_board[6] == 'O' && main_board[7] == 'O' && main_board[8] == 'O') ||
 
 		// Check for matching marks in a column
     (main_board[0] == 'O' && main_board[3] == 'O' && main_board[6] == 'O') ||
@@ -204,17 +200,49 @@ void Check_main_board(void) {
   return;
 }
 
-void Mark_mini_board(void) {
-	// Highlight the mini board
-	/*
-	for (int i = 0; i < 9; i++) {
-		if (mini_board[][] == '0' + 1) {
-			// pass
-		}
-		// buffer_board[]
-		// mini_board[][]
-	}*/
+void mark_main_board(void) {
+  if (
+		// For player one
+		// Check for matching marks in a row
+    (mini_board[current_mini_board][0] == 'X' && mini_board[current_mini_board][1] == 'X' && mini_board[current_mini_board][2] == 'X') ||
+		(mini_board[current_mini_board][3] == 'X' && mini_board[current_mini_board][4] == 'X' && mini_board[current_mini_board][5] == 'X') ||
+		(mini_board[current_mini_board][6] == 'X' && mini_board[current_mini_board][7] == 'X' && mini_board[current_mini_board][8] == 'X') ||
 
+		// Check for matching marks in a column
+		(mini_board[current_mini_board][0] == 'X' && mini_board[current_mini_board][3] == 'X' && mini_board[current_mini_board][6] == 'X') ||
+		(mini_board[current_mini_board][1] == 'X' && mini_board[current_mini_board][4] == 'X' && mini_board[current_mini_board][7] == 'X') ||
+		(mini_board[current_mini_board][2] == 'X' && mini_board[current_mini_board][5] == 'X' && mini_board[current_mini_board][8] == 'X') ||
+
+		// Check for matching marks in a diagonal
+		(mini_board[current_mini_board][0] == 'X' && mini_board[current_mini_board][4] == 'X' && mini_board[current_mini_board][8] == 'X') ||
+		(mini_board[current_mini_board][2] == 'X' && mini_board[current_mini_board][4] == 'X' && mini_board[current_mini_board][6] == 'X')
+  ) {
+		main_board[current_mini_board] = 'X';
+	}
+
+  if (
+		// For player two
+		// Check for matching marks in a row
+    (mini_board[current_mini_board][0] == 'O' && mini_board[current_mini_board][1] == 'O' && mini_board[current_mini_board][2] == 'O') ||
+		(mini_board[current_mini_board][3] == 'O' && mini_board[current_mini_board][4] == 'O' && mini_board[current_mini_board][5] == 'O') ||
+		(mini_board[current_mini_board][6] == 'O' && mini_board[current_mini_board][7] == 'O' && mini_board[current_mini_board][8] == 'O') ||
+
+		// Check for matching marks in a column
+		(mini_board[current_mini_board][0] == 'O' && mini_board[current_mini_board][3] == 'O' && mini_board[current_mini_board][6] == 'O') ||
+		(mini_board[current_mini_board][1] == 'O' && mini_board[current_mini_board][4] == 'O' && mini_board[current_mini_board][7] == 'O') ||
+		(mini_board[current_mini_board][2] == 'O' && mini_board[current_mini_board][5] == 'O' && mini_board[current_mini_board][8] == 'O') ||
+
+		// Check for matching marks in a diagonal
+		(mini_board[current_mini_board][0] == 'O' && mini_board[current_mini_board][4] == 'O' && mini_board[current_mini_board][8] == 'O') ||
+		(mini_board[current_mini_board][2] == 'O' && mini_board[current_mini_board][4] == 'O' && mini_board[current_mini_board][6] == 'O')
+  ) {
+		main_board[current_mini_board] = 'O';
+	}
+
+  return;
+}
+
+void mark_mini_board(void) {
 	int player_mark = 0;
 	int system_mark = 0;
 
@@ -242,25 +270,19 @@ void Mark_mini_board(void) {
 		return;
 	}
 
-	/*
-	This line of code does not work
-	mini_board[current_mini_board][system_mark] = player_mark[current_player];
-	*/
-
+	invalid_mark_flag = 0;
+	// mini_board[current_mini_board][system_mark] = player_mark[current_player];
 	if (current_player == 0) {
 		mini_board[current_mini_board][system_mark] = 'X';
 	}
-	else if (current_player ==1) {
+	else if (current_player == 1) {
 		mini_board[current_mini_board][system_mark] = 'O';
 	}
 
+	mark_main_board();
 	previous_mini_board = current_mini_board;
 	current_mini_board = system_mark;
 
-  return;
-}
-
-void mark_main_board(void) {
   return;
 }
 
@@ -285,16 +307,46 @@ int master(void) {
 
 		system("clear");
 
+		check_main_board();
+
     // Show the winner of the game
-    if (winner == 1)  { std::cout << "Player One Wins!" << std::endl; }
-    else if (winner == 2) { std::cout << "Player Two Wins!" << std::endl; }
+    if (winner == 1)  {
+			std::cout << "Player One Wins!" << std::endl;
+			return 0;
+		}
+    else if (winner == 2) {
+			std::cout << "Player Two Wins!" << std::endl;
+			return 0;
+		}
 
     current_player = legal_turns_played % 2;
 
-		if (invalid_mark_flag == 1) { std::cout << "Invalid Mark" << std::endl; }
-		Print_The_Game();
-		Mark_mini_board();
-  }
+		if (invalid_mark_flag == 1) {
+			std::cout << "Invalid Mark" << std::endl;
+		}
+
+		// Highlight the mini board
+		for (int i = 0; i < 9; i++) {
+			if (
+				mini_board[current_mini_board][i] == ' '
+			) {
+				mini_board[current_mini_board][i] = static_cast<char>(i + '1');
+			}
+		}
+
+		print_the_game();
+		mark_mini_board();
+		mark_main_board();
+
+		// Unhighlight mini board
+		for (int i = 0; i < 9; i++) {
+			if (
+				mini_board[previous_mini_board][i] == static_cast<char>(i + '1')
+			) {
+				mini_board[previous_mini_board][i] = ' ';
+			}
+		}
+	}
 
   std::cout << std::endl << "Its a draw!" << std::endl;
 
