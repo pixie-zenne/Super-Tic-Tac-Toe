@@ -1,41 +1,38 @@
-## Super-Tic-Tac-Toe (0.0.0)
+## Super-Tic-Tac-Toe (1.0.0)
 Inspired by Vsauce's Super Tic Tac Toe video.
 
 ### The Game
 ```
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+   |   |     |   1 | 2 | O   |   O | X | X 
 --- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+ X | X |     |   4 | 5 | O   |     | X |   
 --- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+   |   |     |   7 | 8 | 9   |     | X |   
 
 -----------     -----------     -----------
 
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+ O |   |     |     |   | O   |     | O |   
 --- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+   |   | X   |     |   |     |     | X |   
 --- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+   |   |     |     | O | O   |     |   |   
 
 -----------     -----------     -----------
 
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
+   |   |     |     |   |     |     | X | O 
 --- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
+   |   |     |   O |   |     |     |   |   
 --- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
+   |   | X   |     |   | X   |   O |   |   
 
 
- 1 | 2 | 3   :: Current Player : 0
---- --- ---  :: Current Mini Board  : 0
- 4 | 5 | 6   :: Move : Legal
---- --- ---  Select a mini board to mark
- 7 | 8 | 9   >> ...
+ - | - | X    Current Player : 1 (X)
+--- --- ---   Current Mini Board  : 2
+ - | - | -    Move 22 : Illegal 
+--- --- ---   Select a mini board to mark
+ - | - | -    >> 6
 ```
 
-### The Rules
+### Rules
 1. To play the game, there must be two players
 2. The typical Tic-Tac-Toe rules
-
-### Version
-0.0.0 WIP
