@@ -2,7 +2,6 @@
 
 #include <cstring>
 #include <iostream>
-#include <vector>
 
 #define THEORETICALLY_MAXIMUM_PLAYABLE_TURNS 81
 
