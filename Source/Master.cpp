@@ -1,15 +1,24 @@
 #define master main
 
-#include <cstdbool>
 #include <cstring>
 #include <iostream>
+#include <vector>
 
-char buffer_board[9] = {
-	' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '
-};
-char main_board[9] = {
-	'1', '2', '3', '4', '5', '6', '7', '8', '9'
-};
+#define THEORETICALLY_MAXIMUM_PLAYABLE_TURNS 81
+
+bool invalid_mark_flag = false;
+int game_mode = 0;
+
+char player_mark[2] = {'X', 'O'};
+int current_player = 0;
+
+int current_mini_board = 0;
+int previous_mini_board = 0;
+
+int legal_turns_played = 0;
+int winner = 0;
+
+char main_board[9] = {'-', '-', '-', '-', '-', '-', '-', '-', '-'};
 char mini_board[9][9] = {
   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
@@ -22,103 +31,77 @@ char mini_board[9][9] = {
   {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
 };
 
-// The marks for the two players
-// char player_mark[2] = {'X', 'O'};
-
-// Game State
-int winner = 0;
-int current_player = 0;
-int current_mini_board = 0;
-int previous_mini_board = 0;
-
-int invalid_mark_flag = 0;
-int legal_turns_played = 0;
-int maximum_possible_playeble_turns = 81;
-
-/*
-The visual aid for the game.
-
-So that the developer can easily imagine the boards if they are having a hard time doing so.
-*/ /*
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
---- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
---- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
-
------------     -----------     -----------
-
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
---- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
---- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
-
------------     -----------     -----------
-
- 1 | 2 | 3   |   1 | 2 | 3   |   1 | 2 | 3
---- --- ---  |  --- --- ---  |  --- --- ---
- 4 | 5 | 6   |   4 | 5 | 6   |   4 | 5 | 6
---- --- ---  |  --- --- ---  |  --- --- ---
- 7 | 8 | 9   |   7 | 8 | 9   |   7 | 8 | 9
-
-
- 1 | 2 | 3   :: Current Player : 0
---- --- ---  :: Current Mini Board  : 0
- 4 | 5 | 6   :: Move : Legal
---- --- ---  Select a mini board to mark
- 7 | 8 | 9   >> ...
-*/
-
-void select_first_mini_board(void) {
-  using namespace std;
+void select_game_mode(void) {
+	bool is_selecting = true;
 
 	system("clear");
+	while (is_selecting == true) {
+		std::cout << "Please select the game mode" << std::endl;
+		std::cout << "[1] Classic" << std::endl;
+		std::cout << "[2] Open" << std::endl;
+		std::cout << ">> ";
+		std::cin >> game_mode;
 
-	cout << endl;
+		if (game_mode > 2 || game_mode < 1) {
+			std::cin.clear();
+			std::cin.ignore();
+		}
+		else break;
+	}
 
-  cout << "   |   |     |     |   |     |     |   |   " << endl;
-  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << "   | 1 |     |     | 2 |     |     | 3 |   " << endl;
-  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << "   |   |     |     |   |     |     |   |   " << endl;
+	return;
+}
 
-  cout << endl;
-  cout << "-----------     -----------     -----------" << endl;
-  cout <<  endl;
+void select_first_mini_board(void) {
+	using namespace std;
 
-  cout << "   |   |     |     |   |     |     |   |   " << endl;
-  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << "   | 3 |     |     | 4 |     |     | 5 |   " << endl;
-  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << "   |   |     |     |   |     |     |   |   " << endl;
+	bool is_selecting = true;
 
-  cout << endl;
-  cout << "-----------     -----------     -----------" << endl;
-  cout << endl;
+	while (is_selecting == true) {
+		system("clear");
 
-  cout << "   |   |     |     |   |     |     |   |   " << endl;
-  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << "   | 6 |     |     | 7 |     |     | 8 |   " << endl;
-  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
-  cout << "   |   |     |     |   |     |     |   |   " << endl;
+		cout << "   |   |     |     |   |     |     |   |   " << endl;
+	  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+	  cout << "   | 1 |     |     | 2 |     |     | 3 |   " << endl;
+	  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+	  cout << "   |   |     |     |   |     |     |   |   " << endl;
+	  cout << endl;
+	  cout << "-----------     -----------     -----------" << endl;
+	  cout << endl;
+	  cout << "   |   |     |     |   |     |     |   |   " << endl;
+		cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+		cout << "   | 3 |     |     | 4 |     |     | 5 |   " << endl;
+	  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+	  cout << "   |   |     |     |   |     |     |   |   " << endl;
+	  cout << endl;
+	  cout << "-----------     -----------     -----------" << endl;
+	  cout << endl;
+	  cout << "   |   |     |     |   |     |     |   |   " << endl;
+	  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+	  cout << "   | 6 |     |     | 7 |     |     | 8 |   " << endl;
+	  cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
+	  cout << "   |   |     |     |   |     |     |   |   " << endl;
+	  cout << endl;
+	  cout << endl;
+	 	cout << "   |   |      Please select one of the following numbers:" << endl;
+	  cout << "--- --- ---   1, 2, 3, 4, 5, 6, 7, 8, or 9" << endl;
+	  cout << "   |   |" << endl;
+	  cout << "--- --- ---   Please select the first board" << endl;
+	  cout << "   |   |      >> ";
+		cin >> current_mini_board;
 
-  cout << endl;
-  cout << endl;
+		if (current_mini_board < 1 || current_mini_board > 9) {
+			cin.clear();
+			cin.ignore();
+			}
+		else break;
+	}
 
-  cout << "   |   |      Current Player : Player One" << endl;
-  cout << "--- --- ---   Current Mini Board  : None" << endl;
-  cout << "   |   |   " << endl;
-  cout << "--- --- ---   Please select the first board" << endl;
-  cout << "   |   |      :: ";
-
-  return;
+	return;
 }
 
 void print_the_game(void) {
   using namespace std;
-
-	cout << endl;
 
   cout << " " << mini_board[0][0] << " | " << mini_board[0][1] << " | " << mini_board[0][2] << "   |   " << mini_board[1][0] << " | " << mini_board[1][1] << " | " << mini_board[1][2] << "   |   " << mini_board[2][0] << " | " << mini_board[2][1] << " | " << mini_board[2][2] << " " << endl;
   cout << "--- --- ---  |  --- --- ---  |  --- --- ---" << endl;
@@ -149,11 +132,17 @@ void print_the_game(void) {
   cout << endl;
   cout << endl;
 
-  cout << " " << main_board[0] << " | " << main_board[1] << " | " << main_board[2] << "    Current Player : Player " << (current_player + 1) << endl;
+  cout << " " << main_board[0] << " | " << main_board[1] << " | " << main_board[2] << "    Current Player : " << (current_player + 1);
+		if (current_player == 0) cout << " (X)";
+		else cout << " (O)";
+		cout << endl;
   cout << "--- --- ---   Current Mini Board  : " << (current_mini_board + 1) << endl;
-  cout << " " << main_board[3] << " | " << main_board[4] << " | " << main_board[5] << endl;
+  cout << " " << main_board[3] << " | " << main_board[4] << " | " << main_board[5] << "    Move " << legal_turns_played << " : ";
+		if (invalid_mark_flag == true) cout << "Illegal ";
+		else cout << "Legal ";
+		cout << endl;
   cout << "--- --- ---   Select a mini board to mark" << endl;
-  cout << " " << main_board[6] << " | " << main_board[7] << " | " << main_board[8] << "    :: ";
+  cout << " " << main_board[6] << " | " << main_board[7] << " | " << main_board[8] << "    >> ";
 
   return;
 }
@@ -243,112 +232,105 @@ void mark_main_board(void) {
 }
 
 void mark_mini_board(void) {
-	int player_mark = 0;
-	int system_mark = 0;
+	int mark = 0;
+	int mark_input = 0;
+	std::cin >> mark_input;
 
-	std::cin >> player_mark;
+	// The player's input are 1 to 9 while the software uses 0 to 8
+	mark = mark_input - 1;
 
-	// The players input are 1 to 9 while the software uses 0 to 8
-	system_mark = player_mark - 1;
-
-	// Validate the user's input
-	// - Handles input that goes over the number nine (9)
-	// - Handles input that goes below the number one (1)
-	// - Handles input on an area that is already marked
 	if (
-		player_mark > 9 ||
-		player_mark < 1 ||
-		mini_board[current_mini_board][system_mark] == 'X' ||
-		mini_board[current_mini_board][system_mark] == 'O'
+		mark_input > 9 ||
+		mark_input < 1 ||
+		mini_board[current_mini_board][mark] == 'X' ||
+		mini_board[current_mini_board][mark] == 'O'
 	) {
 		std::cin.clear();
 		std::cin.ignore();
 
-		invalid_mark_flag = 1;
+		invalid_mark_flag = true;
 		legal_turns_played--;
 
 		return;
 	}
 
-	invalid_mark_flag = 0;
-	// mini_board[current_mini_board][system_mark] = player_mark[current_player];
-	if (current_player == 0) {
-		mini_board[current_mini_board][system_mark] = 'X';
-	}
-	else if (current_player == 1) {
-		mini_board[current_mini_board][system_mark] = 'O';
-	}
+	invalid_mark_flag = false;
+	mini_board[current_mini_board][mark] = player_mark[current_player];
 
 	mark_main_board();
-	previous_mini_board = current_mini_board;
-	current_mini_board = system_mark;
+
+	if (game_mode == 1) {
+		if (main_board[mark] == '-') {
+			previous_mini_board = current_mini_board;
+			current_mini_board = mark;
+		}
+	}
+
+	else if (game_mode == 2) {
+		previous_mini_board = current_mini_board;
+		current_mini_board = mark;
+	}
 
   return;
 }
 
+void add_mini_board_highlight(void) {
+	for (int i = 0; i < 9; i++)
+		if ( mini_board[current_mini_board][i] == ' ')
+			mini_board[current_mini_board][i] = static_cast<char>(i + '1');
+
+	return;
+}
+
+void remove_mini_board_highlight(void) {
+	for (int i = 0; i < 9; i++)
+		if (mini_board[previous_mini_board][i] == static_cast<char>(i + '1'))
+			mini_board[previous_mini_board][i] = ' ';
+
+	return;
+}
+
+void game_conclusion(void) {
+	remove_mini_board_highlight();
+	print_the_game();
+	return;
+}
+
 int master(void) {
+	select_game_mode();
+	select_first_mini_board();
 
-  select_first_mini_board();
-	std::cin >> current_mini_board;
-
-	if (current_mini_board < 1 || current_mini_board > 9) {
-		std::cerr << std::endl << "Mini board selection is invalid" << std::endl;
-		std::cerr << "Please select one of the following numbers next time:" << std::endl;
-		std::cerr << "1, 2, 3, 4, 5, 6, 7, 8, or 9" << std::endl;
-		std::cerr << std::endl << "Exiting" << std::endl;
-		return 1;
-	}
-
-	// The players input are 1 to 9 while the software uses 0 to 8
+	// The player's input are 1 to 9 while the software uses 0 to 8
 	current_mini_board--;
 
-	// The actual game
-  for (; legal_turns_played <= maximum_possible_playeble_turns; legal_turns_played++) {
-
+  while (legal_turns_played <= THEORETICALLY_MAXIMUM_PLAYABLE_TURNS) {
 		system("clear");
 
 		check_main_board();
 
-    // Show the winner of the game
-    if (winner == 1)  {
-			std::cout << "Player One Wins!" << std::endl;
-			return 0;
-		}
-    else if (winner == 2) {
-			std::cout << "Player Two Wins!" << std::endl;
-			return 0;
-		}
+		switch (winner) {
+			case 1:
+				std::cout << "Player one win!" << std::endl;
+				game_conclusion();
+				return 0;
+			case 2:
+				std::cout << "Player two wins!" << std::endl;
+				game_conclusion();
+				return 0;
+		}	
 
     current_player = legal_turns_played % 2;
 
-		if (invalid_mark_flag == 1) {
-			std::cout << "Invalid Mark" << std::endl;
-		}
-
-		// Highlight the mini board
-		for (int i = 0; i < 9; i++) {
-			if (
-				mini_board[current_mini_board][i] == ' '
-			) {
-				mini_board[current_mini_board][i] = static_cast<char>(i + '1');
-			}
-		}
+		add_mini_board_highlight();
 
 		print_the_game();
 		mark_mini_board();
-		mark_main_board();
 
-		// Unhighlight mini board
-		for (int i = 0; i < 9; i++) {
-			if (
-				mini_board[previous_mini_board][i] == static_cast<char>(i + '1')
-			) {
-				mini_board[previous_mini_board][i] = ' ';
-			}
-		}
+		remove_mini_board_highlight();
+
+		legal_turns_played++;
 	}
 
-  std::cout << std::endl << "Its a draw!" << std::endl;
-
+	std::cout << std::endl << "Its a draw!" << std::endl;
   return 0;
 }
