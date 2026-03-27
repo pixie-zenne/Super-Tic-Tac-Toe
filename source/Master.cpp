@@ -1,5 +1,10 @@
 #define master main
 
+/* @author pixie-zenne
+ * @version 1.0.0
+ * @license MIT
+ */
+
 #include <cstring>
 #include <iostream>
 
